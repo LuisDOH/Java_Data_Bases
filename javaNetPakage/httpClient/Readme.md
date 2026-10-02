@@ -92,7 +92,7 @@ Una vez recibido, el objeto `HttpResponse<T>` puede exponer los siguientes metod
 * `.headers()`: HttpHeaders recibidos en la respuesta.
 * `.uri()`: La URI final (útil si hubo redirecciones).
 
--> ***Nota:*** Si bien a la hora de recibir la respuesta en un proceso sincrono lo anterior es suficiente, eso cambia sí se trata de una petición ***Asíncrona***. 
+> ***Nota:*** Si bien a la hora de recibir la respuesta en un proceso sincrono lo anterior es suficiente, eso cambia sí se trata de una petición ***Asíncrona***. 
 
 ## Procesos asíncronicos
 El primer cambio a notar es que a la hora de enviar la peticíon al servidor el método de envio cambiara de `client.send(...)` a `client.sendAsync(...)`. Además, se debe implementar un encadenamiendo para el procesamiento de la respuesta.
