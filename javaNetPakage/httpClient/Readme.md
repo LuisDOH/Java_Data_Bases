@@ -14,6 +14,7 @@ El cliente `java.net.http.HttpClient` (introducido de forma definitiva en Java 1
 
 ### `HttpClient`: Condiguracion del cliente 
 
+<img width="1203" height="460" alt="image" src="https://github.com/user-attachments/assets/2c8088c0-6737-4902-b95a-ab9b3a444127" />
 
 ### `HttpRequest`: Definición de la Petición
 
@@ -63,11 +64,11 @@ Para enviar datos en POST, PUT o PATCH, se utiliza un BodyPublisher:
 
 __Generadores de cuerpo comunes (`HttpRequest.BodyPublishers`):__
 
-* noBody(): Peticiones POST/PUT vacías.
-* ofString(String): Envía texto (JSON, XML, texto plano).
-* ofFile(Path): Transfiere un archivo local eficientemente.
-* ofByteArray(byte[]): Envía un arreglo de bytes crudo.
-* ofInputStream(() -> ...): Útil para streams de gran tamaño.
+* `noBody()`: Peticiones POST/PUT vacías.
+* `ofString(String)`: Envía texto (JSON, XML, texto plano).
+* `ofFile(Path)`: Transfiere un archivo local eficientemente.
+* `ofByteArray(byte[])`: Envía un arreglo de bytes crudo.
+* `ofInputStream(() -> ...)`: Útil para streams de gran tamaño.
 
 ### Procesador de la respuesta `BodyHandlers`
 Cuando la respuesta llega del servidor, el `HttpClient` necesita saber cómo transformar los bytes recibidos en un objeto Java. Para eso se usan los `BodyHandlers`.
@@ -77,7 +78,7 @@ ___Tipos de `HttpResponse.BodyHandlers`__
 Dependiendo del tipo de respuesta que esperamos de nuestra petición, podemos seleccionar uno de los siguientes tipos de procesadores.
 
 * `BodyHandlers.ofString()`: Convierte la respuesta en un String (ideal para JSON/XML).
-* BodyHandlers.ofFile(Path.of("download.pdf"))`: Escribe el cuerpo directamente en disco sin cargar todo en memoria RAM.
+* `BodyHandlers.ofFile(Path.of("download.pdf"))`: Escribe el cuerpo directamente en disco sin cargar todo en memoria RAM.
 * `BodyHandlers.ofByteArray()`: Retorna byte[] (imágenes, archivos binarios).
 * `BodyHandlers.ofLines()`: Retorna un Stream<String> para procesar respuesta línea por línea.
 * `BodyHandlers.discarding()`: Ignora el cuerpo (útil cuando solo importa el código de estado HTTP).
