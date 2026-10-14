@@ -106,7 +106,7 @@ CREATE TABLESPACE dev_data_ts
 * **`SIZE 500M`**: Inicializa el archivo de datos con un tamaño de 500 Megabytes.
 * **`AUTOEXTEND ON NEXT 100M MAXSIZE 2G`**: Permite que el archivo crezca automáticamente en bloques de 100 MB hasta un límite de 2 GB.
 * `EXTENT MANAGEMENT LOCAL`: Oracle administra los extents.
-* `SEGMENT SPACE MANAGEMENT AUTO`: Oracle administra el espacio libre internamente.
+* `SEGMENT SPACE MANAGEMENT AUTO`: Oracle administra el espacio libre internamente.
 
 Podemos verificar la creación del Tablespace a través de la siguiente consulta:
 

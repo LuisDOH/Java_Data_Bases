@@ -172,21 +172,23 @@ ESTRUCTURA LÓGICA                         ESTRUCTURA FÍSICA
 ## 5. Arquitectura Multitenant (CDB y PDB)
 
 Introducida en Oracle 12c y estándar a partir de Oracle 20c/21c, esta arquitectura separa la infraestructura de la base de datos de los datos de aplicación.
-´´´
+
+Container Database. -> Pluggable Database.
+Una sola instancia. -> Múltiples bases aisladas.
+
+```
 CDB
 │
 ├── PDB1
 ├── PDB2
 ├── PDB3
 └── PDBn
-Container Database. -> Pluggable Database.
-Una sola instancia. -> Múltiples bases aisladas.
-´´´
+```
 
 * **CDB$ROOT (Container Database Root):** Es el contenedor principal que aloja el Diccionario de Datos del sistema, los procesos de fondo y la configuración de la instancia global.
 * **PDB$SEED:** Plantilla de solo lectura utilizada para el aprovisionamiento rápido de nuevas bases de datos pluggables.
 * **PDBs (Pluggable Databases):** Bases de datos portátiles e independientes que contienen únicamente los esquemas y objetos de la aplicación.
-  * **Ventaja:** Permite consolidación masiva de servidores, aislando la lógica de aplicación sin necesidad de instanciar múltiples SGA/procesos de fondo por separado.
+* **Ventaja:** Permite consolidación masiva de servidores, aislando la lógica de aplicación sin necesidad de instanciar múltiples SGA/procesos de fondo por separado.
 
 ---
 
