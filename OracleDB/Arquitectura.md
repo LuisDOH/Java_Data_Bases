@@ -210,4 +210,4 @@ CDB
 4. Al ejecutar un `COMMIT`:
    * El proceso **LGWR** escribe inmediatamente las entradas del *Redo Log Buffer* a los archivos físicos de *Redo Log* en disco.
    * La transacción queda garantizada persistentemente (**ACID Durability**).
-   * El bloque sucio permanece en memoria hasta que el proceso **DBWn** lo escriba asíncronamente en los *Datafiles*.
+   * El bloque sucio permanece en memoria hasta que el proceso **DBWR** lo escriba asíncronamente en los *Datafiles*.
