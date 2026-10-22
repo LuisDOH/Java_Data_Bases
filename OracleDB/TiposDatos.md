@@ -75,11 +75,3 @@ Diseñados para almacenar datos no estructurados o semiestructurados de gran vol
 | **`BOOLEAN`** | **Oracle 23c** | Soportado directamente en la capa de tablas/SQL (anteriormente solo estaba disponible en PL/SQL). Acepta `TRUE`, `FALSE` y `NULL`. |
 
 ---
-
-## 7. Resumen de Mejores Prácticas
-
-1. **Utiliza `VARCHAR2(n CHAR)` en lugar de `VARCHAR2(n BYTE)`** para garantizar la integridad cuando trabajes con juegos de caracteres UTF-8 multi-byte.
-2. **Usa `NUMBER` para dinero y montos exactos**; utiliza `BINARY_FLOAT` o `BINARY_DOUBLE` únicamente para cálculos matemáticos intensivos o de baja precisión donde el rendimiento en CPU sea prioritario.
-3. **Evita tipos de datos obsoletos:** No utilices `LONG` ni `LONG RAW`; migra siempre a `CLOB` y `BLOB`.
-4. **Para auditoría y fechas precisas:** Prefiere `TIMESTAMP WITH LOCAL TIME ZONE` para evitar disputas de husos horarios en aplicaciones distribuidas globalmente.
-5. **Para JSON en Oracle 21c/23c:** Utiliza el tipo nativo `JSON`. En Oracle 19c o anterior, utiliza `BLOB` o `VARCHAR2` con la restricción `CHECK (col IS JSON)`.
